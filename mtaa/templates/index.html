@@ -40,11 +40,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: 'Roboto', sans-serif;}
       <p class="w3-center"><em>Click on different areas to join them.</em></p>
   </div>
   <div class="w3-row-padding">
-   {%for area in all_areas%}
+   {%for hood in all_hoods%}
     <div class="w3-half w3-margin-bottom ">
-        <a href="{%url 'area' area_id=area.id%}"><img title="Join Neighborhood" src="{{area.area_photo.url}}" alt="Nairobi" class="w3-hover-opacity" style="width:100%"></a>
+        <a href="{%url 'hood' hood_id=hood.id%}"><img title="Join Neighborhood" src="{{hood.hood_photo.url}}" alt="Nairobi" class="w3-hover-opacity" style="width:100%"></a>
       <div class="w3-container w3-white">
-        <h4><em>{{area.area_name}}</em></h4>
+        <h4><em>{{hood.hood_name}}</em></h4>
       </div>
     </div>
     {%endfor%}
@@ -53,18 +53,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: 'Roboto', sans-serif;}
 </div>
 
 <script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
-
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-
-</script>
-
-</body>
-</html>
+  // Tabs
+  function openLink(evt, linkName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("myLink");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+    }
+    document.getElementById(linkName).style.display = "block";
+    evt.currentTarget.className += " w3-red";
+  }
+  
+  // Click on the first tablink on load
+  document.getElementsByClassName("tablink")[0].click();
+  </script>
+  </body>
+  </html>

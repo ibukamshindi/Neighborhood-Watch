@@ -4,8 +4,6 @@ from django.db.models.fields import EmailField
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
-
-
 # Create your models here.
 class Hood(models.Model):
     hood_name=models.CharField(max_length=50,blank=True)
