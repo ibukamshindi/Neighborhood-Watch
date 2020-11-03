@@ -42,6 +42,18 @@ def add_biz(request):
     return render(request, 'add-business.html', {'form': form})
 
 @login_required(login_url='/accounts/login')
+def add_alert(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NotificationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = NotificationForm()
+    return render(request, 'add-post.html', {'form': form})
+
+@login_required(login_url='/accounts/login')
 def hood(request,hood_id):
     businesses = Business.objects.all()
     try:

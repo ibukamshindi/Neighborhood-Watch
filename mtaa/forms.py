@@ -19,7 +19,7 @@ class BusinessForm(forms.ModelForm):
         fields = ('business_name', 'email', 'hood')
 
 
-class Notification(forms.ModelForm):
+class NotificationForm(forms.ModelForm):
     class Meta:
         model= Notification
         fields = ('post', 'posted_by', 'hood')
