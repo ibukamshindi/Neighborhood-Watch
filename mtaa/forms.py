@@ -5,20 +5,14 @@ class AddHoodForm(forms.ModelForm):
     class Meta:
         model = Hood
         fields = ('hood_name', 'hood_photo', 'population')
-
-
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('name', 'neighborhood','email_address')
-
-
 class BusinessForm(forms.ModelForm):
     class Meta:
         model = Business
         fields = ('business_name', 'email', 'hood')
-
-
 class NotificationForm(forms.ModelForm):
     class Meta:
         model= Notification
