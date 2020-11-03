@@ -26,7 +26,7 @@ SECRET_KEY = 'et@d*9x*i75)$-!^u9@g&3=p-almwa8_c88%-f%_+@%@mw#cfy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yourmtaa.herokuapp.com']
 
 
 # Application definition
