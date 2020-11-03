@@ -71,8 +71,6 @@ class Business(models.Model):
     def update_business(self):
         self.update()
 
-    
-
 class Notification(models.Model):
     post=models.CharField(max_length=50,blank=True)
     posted_by=models.ForeignKey(User,null=True,on_delete=models.CASCADE)
