@@ -7,7 +7,7 @@ from .models import *
 from django.http import Http404
 
 # Create your views here.
-def register (request):
+def register(request):
     if request.method=='POST':
       form=UserCreationForm(request.POST)
       if form.is_valid():
@@ -18,8 +18,8 @@ def register (request):
     return render(request,'register.html',locals())
         
 @login_required(login_url='/accounts/login')
-def home (request):
-    current_user=request.User
+def home(request):
+    current_user=request.user
     all_hoods=Hood.objects.all()
     return render(request,'index.html', locals())
 
